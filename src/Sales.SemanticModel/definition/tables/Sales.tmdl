@@ -20,7 +20,8 @@ table Sales
 	measure 'Sales Amount Avg per Day' = AVERAGEX(VALUES('Calendar'[Date]), [Sales Amount])
 		formatString: $ #,##0
 		lineageTag: 65842ce7-7176-4106-868e-2e83aaa62b4c
-
+    measure 'Sales Qty (LY)' = CALCULATE([Sales Qty], SAMEPERIODLASTYEAR('Calendar'[Date]))
+	lineageTag: 019cddab-955e-72e4-afbd-612d555de377
 	measure Margin =
 			SUMX (
 			    Sales,
