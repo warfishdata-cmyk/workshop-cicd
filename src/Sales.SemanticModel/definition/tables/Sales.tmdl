@@ -2,7 +2,8 @@ table Sales
 	lineageTag: 97143e5b-7736-4fcb-8042-26b92b1f5684
 
     measure 'Sales Qty (LY)' = CALCULATE([Sales Qty], SAMEPERIODLASTYEAR('Calendar'[Date]))
-	    lineageTag: 019cddab-955e-72e4-afbd-612d555de377
+	formatString: #,##0
+	lineageTag: 019cddab-955e-72e4-afbd-612d555de377
 
 	measure '# Customers (w/ Sales)' = DISTINCTCOUNT('Sales'[CustomerKey])
 		formatString: #,##0
